@@ -7,11 +7,6 @@ export class User implements Mappable {
     lat: number;
     lng: number;
   };
-  MappableContent(): string {
-    return `<div>
-        <h1 style='font-size:19px;'>Company Name: ${this.name}</h1>
-      </div>`;
-  }
 
   constructor() {
     this.name = faker.name.firstName();
@@ -19,5 +14,11 @@ export class User implements Mappable {
       lat: parseFloat(faker.address.latitude()),
       lng: parseFloat(faker.address.longitude()),
     };
+  }
+
+  MappableContent(): string {
+    return `<div>
+        <h1 style='font-size:19px;'>Company Name: ${this.name}</h1>
+      </div>`;
   }
 }
